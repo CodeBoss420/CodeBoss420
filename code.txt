@@ -1,0 +1,170 @@
+//write a program to sum each digit of an integer
+#include<iostream>
+
+using namespace std;
+int get_sum(int n)
+{
+    int digit = 0, sum = 0;
+    while (n > 0)
+    {
+        digit = n % 10;
+        sum += digit;
+        n /= 10;
+    }
+    return sum;
+}
+
+
+int main()
+{
+    int n, result;
+    cout<<"Enter a positive balue: ";
+    cin>>n;
+    result = get_sum(n);
+    cout<<"Sum: "<<result<<endl;
+    return 0;
+}#include<iostream>
+
+using namespace std;
+
+bool prime_checker(int n)
+{
+    if(n < 2) return false;
+    for(int i = 2; i*i <= n; i++)
+    {
+        if(n % 2 == 0) return false;
+    }
+    return true;
+}
+void print_prime(int n)
+{   
+    printf("Prime numbers are: ");
+    for(int i = 1; i <= n; i++)
+    {   
+        if(prime_checker(i))
+        {
+            cout<<i<<", ";
+        }
+    }
+}
+
+int main()
+{   int n;
+    cout<<"Inter a positive number: ";
+    cin>>n;
+    print_prime(n);
+}//find large and small from an array
+#include<iostream>
+
+using namespace std;
+
+void num_check(int *arr, int size)
+{
+   
+    int large = arr[0], small = arr[0];
+    for(int i = 0; i < size; i++)
+    {
+        if(arr[i] > large) large = arr[i];
+        if(arr[i] < small) small = arr[i];                
+    }
+    for(int i = 0; i < size; i++)
+    {
+        
+    }
+    cout<<"Large : "<<large<<"\t Small: "<<small<<endl;
+}
+
+int main()
+{   
+    int arr[] = {3,6,8,2,1};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    num_check(arr,size);
+}//sum 1 to 100
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int sum = 0;
+    for(int i = 1; i <= 100; i++)
+    {
+        sum += i;
+    }
+    cout<<"Sum(1 to 100): "<<sum<<endl;
+    return 0;   
+}//print 1 to 10
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    for (size_t i = 1; i <= 10; i++)
+    {
+        printf("%zu, ", i);
+    }
+    
+    return 0;   
+}//print half piramid pattern of numbers in C++
+#include<iostream>
+
+using namespace std;
+
+void pattern(int n)
+{
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= i; j++)
+        {
+            cout<<j;
+        }
+        cout<<endl;
+    }
+}
+
+int main()
+{
+    pattern(5);
+    
+    return 0;   
+}//program to print half pirmid using *
+#include<iostream>
+
+using namespace std;
+
+void pattern(int n)
+{
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= i; j++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+
+int main()
+{
+    pattern(5);
+    
+    return 0;   
+}//C++ code to find wheather a given number is odd or even
+#include<iostream>
+
+using namespace std;
+
+bool OE(int n)
+{   
+   return n % 2 == 0; 
+}
+
+int main()
+{   int n;
+    cout<<"Enter a value: ";
+    cin>>n;
+    (OE(n)) ? cout<<"Even\n" : cout<<"Odd\n";
+     
+    return 0;   
+}
